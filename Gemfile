@@ -31,3 +31,5 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 #TZInfo::Data contains data from the IANA Time Zone database packaged as Ruby modules for use with TZInfo.
 gem 'tzinfo-data'
+
+gem 'bootstrap-sass'
