@@ -6,6 +6,7 @@ require 'random_data'
     body: RandomData.random_paragraph
   )
 end
+
 posts = Post.all
 
 100.times do
@@ -14,6 +15,9 @@ posts = Post.all
     body: RandomData.random_paragraph
   )
 end
+
+idem_post = Post.find_or_create_by!(title: "Idempotent Title", body: "Idempotent body")
+Comment.find_or_create_by!(body: "Idempotent comment", post: idem_post)
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
