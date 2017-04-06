@@ -34,3 +34,5 @@ gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
 
 gem 'bootstrap-sass'
+
+gem 'bcrypt'
