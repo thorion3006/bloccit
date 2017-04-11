@@ -1,0 +1,6 @@
+New post: "<%= @post.title %> created successfully."
+ By: <%= @post.user.name %>
+
+ You have favorited your post by default and will receive updtes when there's new comment to your post.
+
+ Visit online at: <%= topic_post_url(@post.topic, @post) %>

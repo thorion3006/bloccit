@@ -1,6 +1,16 @@
 class FavoriteMailer < ApplicationMailer
   default from: "thorion3006@gmail.com"
 
+  def new_post(post)
+    headers["Message-ID"] = "<post/#{post.id}@your-app-name.example>"
+    headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
+    headers["References"] = "<post/#{post.id}@your-app-name.example>"
+
+    @post = post
+
+    mail(to: post.user.email, subject: "New post: #{post.title} created successfully.")
+  end
+
   def new_comment(user, post, comment)
     headers["Message-ID"] = "<comments/#{comment.id}@your-app-name.example>"
     headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
